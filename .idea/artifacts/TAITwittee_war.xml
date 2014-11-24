@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TAITwittee:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="TourTrip.war">
+      <element id="artifact" artifact-name="TAITwittee:war exploded" />
+    </root>
+  </artifact>
+</component>
