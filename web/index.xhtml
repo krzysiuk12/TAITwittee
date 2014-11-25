@@ -1,0 +1,18 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/WEB-INF/pages/EmptyTemplate.xhtml">
+
+    <ui:define name="MainContent">
+        <div class="theme-showcase" role="main">
+            <div class="jumbotron">
+                <p>TAI Project - TODO</p>
+                <div class="text-center">
+                    <h:commandLink styleClass="btn btn-success btn-lg" value="#{p['IndexPage.Buttons.LogIn.Label']}" action="#{mainMenuBean.logInAction}"/>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>
+

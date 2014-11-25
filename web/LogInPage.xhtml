@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/WEB-INF/pages/EmptyTemplate.xhtml">
+
+    <ui:define name="MainContent">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="span8 offset2">
+                    <div class="control-group">
+                        <h:outputText styleClass="control-label" value="#{p['LogInPage.Login.Label']}"/>
+                        <div class="controls">
+                            <h:inputText value="#{logInBean.login}"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <h:outputText styleClass="control-label" value="#{p['LogInPage.Password.Label']}"/>
+                        <div class="controls">
+                            <h:inputSecret value="#{logInBean.password}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

@@ -3,17 +3,17 @@ package pl.edu.agh.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import pl.edu.agh.beans.navigation.NavigationResults;
 
 /**
  * Created by Krzysztof Kicinger on 2014-11-25.
  */
 @Controller
-public class HelloController {
+public class MainMenuController {
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String printHello(@RequestParam("id") int id) {
-        return "Hello";
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginAction() {
+        return NavigationResults.LOG_IN_PAGE.getNavigation();
     }
 
 }

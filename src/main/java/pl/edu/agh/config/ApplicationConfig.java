@@ -8,6 +8,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import pl.edu.agh.config.datasources.ProductionDataSource;
@@ -25,7 +26,7 @@ import java.util.Properties;
 @ComponentScan({"pl.edu.agh.*"})
 @Import({ProductionDataSource.class, TestDataSource.class})
 @Profile(value = {"default", "test"})
-public class ApplicationConfig {
+public class ApplicationConfig extends WebMvcConfigurerAdapter {
 
     @Autowired
     private DataSource dataSource;
@@ -54,15 +55,21 @@ public class ApplicationConfig {
     }
     //</editor-fold>
 
-    //<editor-fold desc="View Resolver">
+    //<editor-fold desc="View Resolver And Resources Handler">
     @Bean(name = "viewResolver")
     public ViewResolver getViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setViewClass(JstlView.class);
         viewResolver.setPrefix("/WEB-INF/pages/");
-        viewResolver.setSuffix(".jsp");
+        viewResolver.setSuffix(".xhtml");
         return viewResolver;
     }
+
+    /*@Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources*//**//**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/bootstrap*//**//**").addResourceLocations("/resources/");
+    }*/
     //</editor-fold>
 
     //<editor-fold desc="Getters and Setters">
