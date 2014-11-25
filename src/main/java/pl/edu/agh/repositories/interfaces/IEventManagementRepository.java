@@ -11,5 +11,7 @@ import java.util.List;
 public interface IEventManagementRepository extends IBaseHibernateRepository<Event> {
 
     public List<Event> getAllCreatorEvents(UserAccount creator);
+    public List<Event> getAllEvents();
+    public void removeEvent(Event event);
 
 }

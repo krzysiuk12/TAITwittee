@@ -19,4 +19,7 @@ public interface IEventsManagementService {
 
     public List<Event> getAllCreatorEvents(UserAccount account);
 
+    public List<Event> getAllEvents();
+
+    public void removeEvent(Event event);
 }

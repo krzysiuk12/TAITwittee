@@ -39,7 +39,17 @@ public class EventsManagementService implements IEventsManagementService {
     }
 
     @Override
+    public void removeEvent(Event event) {
+        eventManagementRepository.removeEvent(event);
+    }
+
+    @Override
     public List<Event> getAllCreatorEvents(UserAccount account) {
         return eventManagementRepository.getAllCreatorEvents(account);
+    }
+
+    @Override
+    public List<Event> getAllEvents() {
+        return eventManagementRepository.getAllEvents();
     }
 }
