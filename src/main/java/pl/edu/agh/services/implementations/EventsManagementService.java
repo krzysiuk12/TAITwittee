@@ -13,6 +13,7 @@ import pl.edu.agh.services.interfaces.IEventsManagementService;
 import pl.edu.agh.services.interfaces.IUsersManagementService;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Krzysztof Kicinger on 2014-11-24.
@@ -37,8 +38,13 @@ public class EventsManagementService implements IEventsManagementService {
     }
 
     @Override
+    @Transactional
     public void addNewComment(Event event, Comment comment) {
+//        List<Comment> comments = event.getComments();
+//        comments.add(comment);
+//        eventManagementRepository.saveOrUpdate(event);
 
+//        TODO - saving comment to database
     }
 
     @Override

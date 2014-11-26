@@ -2,6 +2,7 @@ package pl.edu.agh.services.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.edu.agh.domain.UserAccount;
 import pl.edu.agh.repositories.interfaces.IUsersManagementRepository;
 import pl.edu.agh.services.interfaces.IUsersManagementService;
@@ -20,6 +21,7 @@ public class UsersManagementService implements IUsersManagementService {
     }
 
     @Override
+    @Transactional
     public void addNewUser(UserAccount account) {
         usersManagementRepository.saveOrUpdate(account);
     }

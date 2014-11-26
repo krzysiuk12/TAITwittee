@@ -34,5 +34,4 @@ public class ShowEventDescriptionBean extends SpringBeanAutowiringSupport {
         eventID = new Long(context.getExternalContext().getRequestParameterMap().get("eventID"));
         return NavigationResults.SHOW_EVENT_DESCRIPTION_PAGE.getNavigation();
     }
-
 }

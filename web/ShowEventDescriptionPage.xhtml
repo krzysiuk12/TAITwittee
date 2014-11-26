@@ -7,6 +7,10 @@
     <div class="theme-showcase" role="main">
         <div class="jumbotron">
             <h:outputLabel value="Event: #{showEventDescriptionBean.getEvent().title}"/>
+
+            <h:commandLink value="Add comment" action="#{addNewCommentBean.goToEventNewComment()}">
+                <f:param name="eventID" value="#{showEventDescriptionBean.getEvent().getId()}" />
+            </h:commandLink>
         </div>
     </div>
 </ui:define>

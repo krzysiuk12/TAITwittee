@@ -1,5 +1,6 @@
 package pl.edu.agh.domain;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.*;
 
 /**
@@ -7,6 +8,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "COMMENTS")
+@ManagedBean(name="comment")
 public class Comment extends BaseObject {
 
     private Event event;

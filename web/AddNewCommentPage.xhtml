@@ -1,11 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
-</html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+                template="/EmptyTemplate.xhtml">
+
+    <ui:define name="MainContent">
+        <div class="theme-showcase" role="main">
+            <div class="jumbotron">
+                <h:panelGrid id="panel1" columns="2" border="1"
+                             cellpadding="5" cellspacing="1">
+                    <f:facet name="header">
+                        <h:outputText value="Add Comment"/>
+                    </f:facet>
+                    <h:outputLabel value="Comment:"/>
+                    <h:inputText value="#{comment.comment}" id="comment"/>
+                    <f:facet name="footer">
+                        <h:commandButton value="Save" action="#{addNewCommentBean.addNewComment(addNewCommentBean.eventID, comment)}">
+                            <f:ajax render="comment" execute="@form"/>
+                        </h:commandButton>
+                    </f:facet>
+                </h:panelGrid>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>
