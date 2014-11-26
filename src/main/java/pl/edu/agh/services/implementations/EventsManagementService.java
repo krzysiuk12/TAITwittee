@@ -67,6 +67,7 @@ public class EventsManagementService implements IEventsManagementService {
     }
 
     @Override
+    @Transactional
     public List<Event> getAllEvents() {
         return eventManagementRepository.getAllEvents();
     }

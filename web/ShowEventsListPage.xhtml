@@ -7,12 +7,12 @@
         <div class="theme-showcase" role="main">
             <div class="jumbotron">
                 <h:outputLabel value="Events"/>
-                <h:dataTable value="#{eventManagementRepository.getAllEvents()}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                <h:dataTable value="#{showEventsListBean.getAllEvents()}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Title"/>
                         </f:facet>
-                        <h:outputText value="#{item.title}"/>
+                        <h:commandLink value="#{item.title}" action="#{showEventsListBean.goToEventDescription(item)}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">
@@ -33,7 +33,6 @@
                         <h:outputText value="#{item.url}"/>
                     </h:column>
                 </h:dataTable>
-                <h:commandLink value="Go to description" action="#{showEventsListBean.goToEventDescription(item)}" />
             </div>
         </div>
     </ui:define>
