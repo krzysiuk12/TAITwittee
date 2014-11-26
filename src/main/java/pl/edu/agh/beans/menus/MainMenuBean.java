@@ -19,4 +19,8 @@ public class MainMenuBean {
         return NavigationResults.SHOW_EVENTS_LIST_PAGE.getNavigation();
     }
 
+    public String addNewEventAction(){
+        return NavigationResults.ADD_NEW_EVENT_PAGE.getNavigation();
+    }
+
 }

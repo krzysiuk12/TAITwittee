@@ -3,6 +3,7 @@ package pl.edu.agh.domain;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "EVENTS")
+@ManagedBean(name="event")
 public class Event extends BaseObject {
 
     public enum Status {
