@@ -25,10 +25,6 @@ public class ShowEventsListBean extends SpringBeanAutowiringSupport {
     @Autowired
     public IEventsManagementService eventsManagementService;
 
-    public String goToEventDescription(Event event) {
-        return NavigationResults.SHOW_EVENT_DESCRIPTION_PAGE.getNavigation();
-    }
-
     @Transactional
     public List<Event> getAllEvents() {
         return eventsManagementService.getAllEvents();

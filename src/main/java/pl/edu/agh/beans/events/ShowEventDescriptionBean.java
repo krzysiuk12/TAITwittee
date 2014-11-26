@@ -1,6 +1,7 @@
 package pl.edu.agh.beans.events;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import pl.edu.agh.beans.navigation.NavigationResults;
 import pl.edu.agh.domain.Event;
@@ -21,16 +22,16 @@ public class ShowEventDescriptionBean extends SpringBeanAutowiringSupport {
     @Autowired
     public IEventsManagementService eventsManagementService;
 
-    private Event event;
+    private Long eventID;
 
+    @Transactional
     public Event getEvent() {
-        return event;
+        return eventsManagementService.getEventById(eventID);
     }
 
     public String goToEventDescription() {
         FacesContext context = FacesContext.getCurrentInstance();
-        String eventID = context.getExternalContext().getRequestParameterMap().get("eventID");
-        event = eventsManagementService.getEventById(new Long(eventID));
+        eventID = new Long(context.getExternalContext().getRequestParameterMap().get("eventID"));
         return NavigationResults.SHOW_EVENT_DESCRIPTION_PAGE.getNavigation();
     }
 

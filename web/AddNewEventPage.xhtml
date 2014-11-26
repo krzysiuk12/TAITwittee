@@ -18,7 +18,7 @@
                     <h:outputLabel value="Date:"/>
                     <h:inputText value="#{event.date}" id="date"/>
                     <f:facet name="footer">
-                        <h:commandButton value="Save" action="#{eventsManagementService.addNewEvent(event)}">
+                        <h:commandButton value="Save" action="#{addNewEventBean.addNewEvent(event)}">
                             <f:ajax render="title description date" execute="@form"/>
                         </h:commandButton>
                     </f:facet>

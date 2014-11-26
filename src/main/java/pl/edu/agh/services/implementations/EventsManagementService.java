@@ -32,18 +32,8 @@ public class EventsManagementService implements IEventsManagementService {
 
     @Override
     @Transactional
-    public String addNewEvent(Event event) {
-        if (event.getCreator() == null) {
-            UserAccount user = new UserAccount("user", UserGroup.CREATOR);
-            usersManagementService.addNewUser(user);
-            event.setCreator(user);
-        }
-        if (event.getUrl() == null) {
-            event.setUrl("ABCD");
-        }
+    public void addNewEvent(Event event) {
         eventManagementRepository.saveOrUpdate(event);
-
-        return NavigationResults.SHOW_EVENTS_LIST_PAGE.getNavigation();
     }
 
     @Override
