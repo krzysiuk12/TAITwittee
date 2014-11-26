@@ -12,7 +12,9 @@
                         <f:facet name="header">
                             <h:outputText value="Title"/>
                         </f:facet>
-                        <h:commandLink value="#{item.title}" action="#{showEventsListBean.goToEventDescription(item)}" />
+                        <h:commandLink value="#{item.title}" action="#{showEventDescriptionBean.goToEventDescription()}">
+                            <f:param name="eventID" value="#{item.getId()}" />
+                        </h:commandLink>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
