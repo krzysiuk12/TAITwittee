@@ -15,4 +15,8 @@ public class MainMenuBean {
         return NavigationResults.LOG_IN_PAGE.getNavigation();
     }
 
+    public String showEventsAction(){
+        return NavigationResults.SHOW_EVENTS_LIST_PAGE.getNavigation();
+    }
+
 }

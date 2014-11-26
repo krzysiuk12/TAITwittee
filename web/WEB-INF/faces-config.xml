@@ -18,22 +18,22 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>AddNewEventPage</from-outcome>
-            <to-view-id>/pages/AddNewEventPage.xhtml</to-view-id>
+            <to-view-id>/AddNewEventPage.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>ShowEventDescriptionPage</from-outcome>
-            <to-view-id>/pages/ShowEventDescriptionPage.xhtml</to-view-id>
+            <to-view-id>/ShowEventDescriptionPage.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>EditEventPage</from-outcome>
-            <to-view-id>/pages/EditEventPage.xhtml</to-view-id>
+            <to-view-id>/EditEventPage.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>ShowEventsListPage</from-outcome>
-            <to-view-id>/pages/ShowEventsListPage.xhtml</to-view-id>
+            <to-view-id>/ShowEventsListPage.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
