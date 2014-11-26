@@ -13,7 +13,7 @@
         <from-view-id>*</from-view-id>
         <navigation-case>
             <from-outcome>AddNewCommentPage</from-outcome>
-            <to-view-id>/pages/AddNewCommentPage.xhtml</to-view-id>
+            <to-view-id>/AddNewCommentPage.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
