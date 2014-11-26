@@ -22,4 +22,6 @@ public interface IEventsManagementService {
     public List<Event> getAllEvents();
 
     public void removeEvent(Event event);
+
+    public void updateEvent(Event event);
 }

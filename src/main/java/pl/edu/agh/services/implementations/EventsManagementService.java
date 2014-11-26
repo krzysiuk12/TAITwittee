@@ -48,6 +48,13 @@ public class EventsManagementService implements IEventsManagementService {
     }
 
     @Override
+    @Transactional
+    public void updateEvent(Event event) {
+        eventManagementRepository.saveOrUpdate(event);
+    }
+
+    @Override
+    @Transactional
     public Event getEventById(Long id) {
         return eventManagementRepository.getById(id);
     }
