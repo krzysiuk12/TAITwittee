@@ -45,4 +45,12 @@ public class EditEventBean extends SpringBeanAutowiringSupport {
         eventsManagementService.updateEvent(this.event);
         return NavigationResults.SHOW_EVENTS_LIST_PAGE.getNavigation();
     }
+
+    @Transactional
+    public String removeEvent() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        Event eventToRemove = eventsManagementService.getEventById(new Long(context.getExternalContext().getRequestParameterMap().get("eventID")));
+        eventsManagementService.removeEvent(eventToRemove);
+        return NavigationResults.SHOW_EVENTS_LIST_PAGE.getNavigation();
+    }
 }
