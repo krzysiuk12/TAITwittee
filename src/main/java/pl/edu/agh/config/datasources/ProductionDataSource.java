@@ -18,7 +18,7 @@ public class ProductionDataSource {
     public DataSource getDataSource() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/TAIProject");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/taiproject");
         dataSource.setUsername("postgres");
         dataSource.setPassword("postgres");
         return dataSource;
